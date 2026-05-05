@@ -1,0 +1,661 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coffee Shop · Best Coffee Landing</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="stye.css">
+</head>
+<body>
+  <div class="page-shell">
+    <div class="hero-card-wrapper">
+      <div class="hero-card">
+      <header class="hero-top">
+        <div class="hero-brand">
+          <div class="brand-logo"><i class="fas fa-coffee"></i></div>
+          <div>
+            <div class="brand-title">Pii Raa's Coffee Shop</div>
+          </div>
+        </div>
+
+        <nav class="hero-nav">
+          <a href="#menu">Menu</a>
+          <a href="#order">Order</a>
+          <a href="#contact">Contact</a>
+        </nav>
+
+        <div class="hero-search">
+          <input id="coffeeSearchInput" type="text" placeholder="Search coffee">
+          <button id="coffeeSearchBtn" type="button" aria-label="Search"><i class="fas fa-search"></i></button>
+        </div>
+      </header>
+
+      <main class="hero-body">
+        <section class="hero-copy">
+          <p class="eyebrow">Best coffee</p>
+          <h1>Make your day <span>great</span><br>with our <span>coffee</span>!</h1>
+          <p>Discover handcrafted blends, premium beans, and cozy moments with every cup. Enjoy rich flavor, fast delivery, and a morning made better.</p>
+          <a class="hero-cta" href="#order">Order Now</a>
+          <div class="hero-card-info">
+            <div class="mini-figure"><i class="fas fa-mug-hot"></i></div>
+            <div>hero-coffee-image
+              <p>Freshly brewed every morning.</p>
+              <a class="mini-link" href="#menu">See menu <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </section>
+
+        <section class="hero-visual">
+          <div class="visual-card">
+            <img class="" src="coffee-home.png" alt="Latte coffee cup with coffee beans">
+          </div>
+        </section>
+      </main>
+      </div>
+    </div>
+
+    <div class="content-sections">
+      <section id="menu" class="section section-menu">
+        <div class="menu-header">
+          <div class="section-top">
+            <div>
+              <span class="section-label">Menu</span>
+              <h2>Shop our menu</h2>
+            </div>
+            <p>Select your favorite coffee and add to cart. Browse by category.</p>
+          </div>
+
+          <div class="menu-controls">
+            <div class="menu-categories">
+              <button class="cat-filter active" data-category="all">All</button>
+              <button class="cat-filter" data-category="Hot coffee"> Hot</button>
+              <button class="cat-filter" data-category="Cold coffee"> Cold</button>
+              <button class="cat-filter" data-category="Frappe coffee"> Frappe</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-content">
+          <div id="menuProductsGrid" class="menu-products-grid"></div>
+          <aside class="menu-cart-sidebar">
+            <div class="cart-header">
+              <h3><i class="fas fa-shopping-cart"></i> Your Cart</h3>
+            </div>
+            <div id="menuCartItems" class="cart-items-list">
+              <div class="empty-cart-msg">No items yet</div>
+            </div>
+            <div class="cart-summary">
+              <div class="cart-total-row">
+                <span>Total</span>
+                <span id="menuCartTotal">$0.00</span>
+              </div>
+              <button id="checkoutBtn" class="checkout-button">Checkout</button>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section id="order" class="section section-order">
+        <div class="section-top">
+          <div>
+            <span class="section-label">Place Order</span>
+            <h2>Order your perfect cup</h2>
+          </div>
+          <p>Fill in your details and we’ll prepare your order for pickup or delivery.</p>
+        </div>
+        <form id="orderForm" class="order-form">
+          <div class="form-row">
+            <label for="customerName">Name</label>
+            <input id="customerName" type="text" placeholder="Your name" required>
+          </div>
+          <div class="form-row">
+            <label for="customerEmail">Email</label>
+            <input id="customerEmail" type="email" placeholder="you@example.com" required>
+          </div>
+          <div class="form-row">
+            <label for="customerPhone">Phone</label>
+            <input id="customerPhone" type="tel" placeholder="Your phone number" required>
+          </div>
+          <div class="form-row">
+            <label for="orderCoffee">Coffee</label>
+            <input id="orderCoffee" type="text" placeholder="Coffee name" required>
+          </div>
+          <div class="form-row">
+            <label for="orderQuantity">Quantity</label>
+            <input id="orderQuantity" type="number" min="1" value="1" required>
+          </div>
+          <div class="form-row full-width">
+            <label for="orderPlace">Place</label>
+            <input id="orderPlace" type="text" placeholder="Pickup counter or delivery address" required>
+          </div>
+          <div class="form-row full-width">
+            <label for="orderNotes">Notes</label>
+            <textarea id="orderNotes" rows="4" placeholder="Extra foam, less sugar, add a pastry..."></textarea>
+          </div>
+          <button type="submit" class="hero-cta">Place Order</button>
+          <div id="orderResult" class="form-result"></div>
+        </form>
+      </section>
+
+      <section id="contact" class="section section-contact">
+        <div class="section-top">
+          <div>
+            <span class="section-label">Contact</span>
+            <h2>Get in touch with us</h2>
+          </div>
+          <p>Have a question or need help with an order? Send us a message and we’ll reply quickly.</p>
+        </div>
+        <div class="contact-grid">
+          <div class="contact-details">
+            <div class="contact-item"><i class="fas fa-map-marker-alt"></i> 155 Coffee Street, Phnom Penh</div>
+            <div class="contact-item"><i class="fas fa-phone-alt"></i> +855 69 958487</div>
+            <div class="contact-item"><i class="fas fa-envelope"></i> piira1810@gmail.com</div>
+          </div>
+          <form id="contactForm" class="order-form">
+            <div class="form-row">
+              <label for="contactName">Name</label>
+              <input id="contactName" type="text" placeholder="Your name" required>
+            </div>
+            <div class="form-row">
+              <label for="contactEmail">Email</label>
+              <input id="contactEmail" type="email" placeholder="you@example.com" required>
+            </div>
+            <div class="form-row full-width">
+              <label for="contactMessage">Message</label>
+              <textarea id="contactMessage" rows="4" placeholder="Write your message..."></textarea>
+            </div>
+            <button type="submit" class="hero-cta">Send Message</button>
+            <div id="contactResult" class="form-result"></div>
+          </form>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <div id="productDetailModal" class="product-detail-modal" aria-hidden="true">
+    <div class="product-detail-panel" role="dialog" aria-modal="true" aria-labelledby="detailProductName">
+      <button type="button" class="detail-close" id="detailCloseBtn" aria-label="Close detail">
+        <i class="fas fa-times"></i>
+      </button>
+      <div class="detail-image-wrap">
+        <img id="detailProductImage" src="" alt="">
+      </div>
+      <span class="detail-category" id="detailProductCategory"></span>
+      <h3 id="detailProductName"></h3>
+      <p id="detailProductDescription"></p>
+      <div class="detail-option">
+        <label for="detailSugarSelect">Sugar</label>
+        <select id="detailSugarSelect">
+          <option value="No sugar">No sugar</option>
+          <option value="25% sugar">25% sugar</option>
+          <option value="50% sugar" selected>50% sugar</option>
+          <option value="75% sugar">75% sugar</option>
+          <option value="100% sugar">100% sugar</option>
+        </select>
+      </div>
+      <div class="detail-footer">
+        <span id="detailProductPrice"></span>
+        <button type="button" class="btn-add-to-cart" id="detailAddBtn">
+          <i class="fas fa-plus"></i> Add
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const coffeeMenuData = [
+      { name: 'Hot Americano', price: 4.95, category: 'Hot coffee', description: 'Smooth espresso with hot water and a bold finish.', image: 'https://images.unsplash.com/photo-1497636577773-f1231844b336?auto=format&fit=crop&w=900&q=80' },
+      { name: 'Hot Lattee', price: 4.75, category: 'Hot coffee', description: 'Classic latte with steamed milk and soft foam.', image: 'https://images.unsplash.com/photo-1561882468-9110e03e0f78?auto=format&fit=crop&w=900&q=80' },
+      { name: 'Hot Cappucino', price: 3.25, category: 'Hot coffee', description: 'Rich espresso with thick milk foam.', image: 'https://images.unsplash.com/photo-1572442388796-11668a67e53d?auto=format&fit=crop&w=900&q=80' },
+      { name: 'Hot Mocha', price: 5.25, category: 'Hot coffee', description: 'Chocolatey mocha with creamy finish.', image: 'https://images.unsplash.com/photo-1578314675249-a6910f80cc4e?auto=format&fit=crop&w=900&q=80' },
+      { name: 'Iced Americano', price: 4.25, category: 'Cold coffee', description: 'Crisp iced espresso with filtered water.', image: 'https://images.unsplash.com/photo-1517701604599-bb29b565090c?auto=format&fit=crop&w=900&q=80' },
+      { name: 'Cold Brew Silk', price: 4.95, category: 'Cold coffee', description: 'Smooth cold brew with soft acidity.', image: 'https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=900&q=80' },
+      { name: 'Iced Hazelnut Latte', price: 5.45, category: 'Cold coffee', description: 'Nutty latte chilled with ice.', image: 'https://images.unsplash.com/photo-1517959105821-eaf2591984ca?auto=format&fit=crop&w=900&q=80' },
+      { name: 'Nitro Cold Brew', price: 5.75, category: 'Cold coffee', description: 'Creamy nitrogen-infused cold brew.', image: 'https://images.unsplash.com/photo-1592663527359-cf6642f54cff?auto=format&fit=crop&w=900&q=80' },
+      { name: 'Caramel Frappe', price: 6.25, category: 'Frappe coffee', description: 'Blended caramel frappe with whipped cream.', image: 'https://images.unsplash.com/photo-1572490122747-3968b75cc699?auto=format&fit=crop&w=900&q=80' },
+      { name: 'Mocha Cookie Frappe', price: 6.75, category: 'Frappe coffee', description: 'Mocha frappe with cookie crunch.', image: 'https://images.unsplash.com/photo-1577805947697-89e18249d767?auto=format&fit=crop&w=900&q=80' },
+      { name: 'Vanilla Bean Frappe', price: 6.25, category: 'Frappe coffee', description: 'Sweet vanilla frappe with frothy top.', image: 'https://images.unsplash.com/photo-1541658016709-82535e94bc69?auto=format&fit=crop&w=900&q=80' },
+      { name: 'Strawberry Cream Frappe', price: 6.45, category: 'Frappe coffee', description: 'Fresh strawberry blended frappe.', image: 'https://images.unsplash.com/photo-1579954115563-e72bf1381629?auto=format&fit=crop&w=900&q=80' }
+    ];
+
+    function handleSearch() {
+      const input = document.getElementById('coffeeSearchInput');
+      const button = document.getElementById('coffeeSearchBtn');
+      const menuSection = document.getElementById('menu');
+
+      function searchProducts(shouldScroll = false) {
+        menuSearchQuery = input.value.toLowerCase().trim();
+
+        if (menuSearchQuery) {
+          menuCurrentCategory = 'all';
+          document.querySelectorAll('.cat-filter').forEach(btn => {
+            btn.classList.toggle('active', btn.getAttribute('data-category') === 'all');
+          });
+        }
+
+        renderMenuProducts();
+
+        if (shouldScroll && menuSection) {
+          menuSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }
+
+      input.addEventListener('input', () => {
+        searchProducts(false);
+      });
+
+      input.addEventListener('keydown', event => {
+        if (event.key === 'Enter') {
+          event.preventDefault();
+          searchProducts(true);
+        }
+      });
+
+      button.addEventListener('click', () => {
+        searchProducts(true);
+      });
+    }
+
+    function formatOrderCoffeeName(name, price, quantity) {
+      return `${name} - $${(price * quantity).toFixed(2)}`;
+    }
+
+    function getOrderCoffeeName(value) {
+      return value.replace(/\s-\s\$\d+(\.\d{2})?$/, '').trim();
+    }
+
+    function initOrderForm() {
+      const form = document.getElementById('orderForm');
+      const result = document.getElementById('orderResult');
+      const quantityInput = document.getElementById('orderQuantity');
+      const coffeeInput = document.getElementById('orderCoffee');
+
+      quantityInput.addEventListener('input', () => {
+        const coffeeName = coffeeInput.dataset.name;
+        const coffeePrice = Number(coffeeInput.dataset.price);
+        const qty = Number(quantityInput.value) || 1;
+
+        if (coffeeName && coffeePrice) {
+          coffeeInput.value = formatOrderCoffeeName(coffeeName, coffeePrice, qty);
+        }
+      });
+
+      coffeeInput.addEventListener('input', () => {
+        delete coffeeInput.dataset.name;
+        delete coffeeInput.dataset.price;
+      });
+
+      form.addEventListener('submit', event => {
+        event.preventDefault();
+        const name = document.getElementById('customerName').value.trim();
+        const email = document.getElementById('customerEmail').value.trim();
+        const phone = document.getElementById('customerPhone').value.trim();
+        const coffee = coffeeInput.dataset.name || getOrderCoffeeName(coffeeInput.value);
+        const qty = Number(quantityInput.value);
+        const place = document.getElementById('orderPlace').value.trim();
+        const notes = document.getElementById('orderNotes').value.trim();
+        const product = coffeeMenuData.find(item => item.name === coffee);
+        const price = Number(coffeeInput.dataset.price) || (product ? product.price : 0);
+        const total = (price * qty).toFixed(2);
+
+        result.innerHTML = `<strong>Order confirmed!</strong> Thanks ${name}. We received your order for ${qty} × ${coffee}. Phone: ${phone}. Place: ${place}. Total: $${total}. ${notes ? 'Notes: ' + notes : ''}`;
+        result.classList.add('result-visible');
+        form.reset();
+        delete coffeeInput.dataset.name;
+        delete coffeeInput.dataset.price;
+      });
+    }
+
+    function initContactForm() {
+      const form = document.getElementById('contactForm');
+      const result = document.getElementById('contactResult');
+      form.addEventListener('submit', event => {
+        event.preventDefault();
+        const name = document.getElementById('contactName').value.trim();
+        result.innerHTML = `<strong>Message sent!</strong> Thanks ${name}, we’ll reply shortly.`;
+        result.classList.add('result-visible');
+        form.reset();
+      });
+    }
+
+    function initNavScroll() {
+      document.querySelectorAll('.hero-nav a').forEach(link => {
+        link.addEventListener('click', event => {
+          const targetId = link.getAttribute('href').substring(1);
+          const target = document.getElementById(targetId);
+          if (target) {
+            event.preventDefault();
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        });
+      });
+    }
+
+    function initStickyHeader() {
+      const header = document.querySelector('.hero-top');
+      if (!header) return;
+
+      function toggleHeader() {
+        header.classList.toggle('header-scrolled', window.scrollY > 80);
+      }
+
+      toggleHeader();
+      window.addEventListener('scroll', toggleHeader, { passive: true });
+    }
+
+    // ===== MENU CART FUNCTIONALITY =====
+    let menuCart = [];
+    let menuCurrentCategory = 'all';
+    let menuSearchQuery = '';
+
+    function getCategoryIcon(category) {
+      const icons = {
+        'Hot coffee': '🔥',
+        'Cold coffee': '🧊',
+        'Frappe coffee': '🥤'
+      };
+      return icons[category] || '☕';
+    }
+
+    function renderMenuProducts() {
+      const grid = document.getElementById('menuProductsGrid');
+      let filtered = [...coffeeMenuData];
+
+      if (menuCurrentCategory !== 'all') {
+        filtered = filtered.filter(p => p.category === menuCurrentCategory);
+      }
+
+      if (menuSearchQuery) {
+        filtered = filtered.filter(p =>
+          p.name.toLowerCase().includes(menuSearchQuery) ||
+          p.description.toLowerCase().includes(menuSearchQuery) ||
+          p.category.toLowerCase().includes(menuSearchQuery)
+        );
+      }
+
+      if (filtered.length === 0) {
+        grid.innerHTML = `
+          <div class="menu-empty-state">
+            <i class="fas fa-search"></i>
+            <h3>No coffee found</h3>
+            <p>Try another coffee name, category, or flavor note.</p>
+          </div>
+        `;
+        return;
+      }
+
+      grid.innerHTML = filtered.map(item => `
+        <div class="menu-product-card" role="button" tabindex="0" data-name="${item.name}">
+          <div class="product-image">
+            <img src="${item.image}" alt="${item.name}">
+          </div>
+          <div class="product-details">
+            <h4>${item.name}</h4>
+            <p>${item.description}</p>
+            <div class="product-footer">
+              <span class="product-price">$${item.price.toFixed(2)}</span>
+              <button type="button" class="btn-add-to-cart" data-name="${item.name}" data-price="${item.price}">
+                <i class="fas fa-plus"></i> Add
+              </button>
+            </div>
+          </div>
+        </div>
+      `).join('');
+
+      attachMenuDetailButtons();
+      attachMenuAddButtons();
+    }
+
+    function openProductDetail(productName) {
+      const product = coffeeMenuData.find(item => item.name === productName);
+      const modal = document.getElementById('productDetailModal');
+      if (!product || !modal) return;
+
+      const detailImage = document.getElementById('detailProductImage');
+      detailImage.src = product.image;
+      detailImage.alt = product.name;
+      document.getElementById('detailProductCategory').textContent = product.category;
+      document.getElementById('detailProductName').textContent = product.name;
+      document.getElementById('detailProductDescription').textContent = product.description;
+      document.getElementById('detailProductPrice').textContent = `$${product.price.toFixed(2)}`;
+      document.getElementById('detailAddBtn').dataset.name = product.name;
+      document.getElementById('detailAddBtn').dataset.price = product.price;
+      document.getElementById('detailSugarSelect').value = '50% sugar';
+
+      modal.classList.add('detail-visible');
+      modal.setAttribute('aria-hidden', 'false');
+      document.body.classList.add('modal-open');
+    }
+
+    function closeProductDetail() {
+      const modal = document.getElementById('productDetailModal');
+      if (!modal) return;
+
+      modal.classList.remove('detail-visible');
+      modal.setAttribute('aria-hidden', 'true');
+      document.body.classList.remove('modal-open');
+    }
+
+    function attachMenuDetailButtons() {
+      document.querySelectorAll('.menu-product-card').forEach(card => {
+        card.addEventListener('click', () => {
+          openProductDetail(card.dataset.name);
+        });
+
+        card.addEventListener('keydown', event => {
+          if (event.key === 'Enter' || event.key === ' ') {
+            event.preventDefault();
+            openProductDetail(card.dataset.name);
+          }
+        });
+      });
+    }
+
+    function attachMenuAddButtons() {
+      document.querySelectorAll('#menuProductsGrid .btn-add-to-cart').forEach(btn => {
+        btn.addEventListener('click', event => {
+          event.stopPropagation();
+          const name = btn.getAttribute('data-name');
+          const price = parseFloat(btn.getAttribute('data-price'));
+          addToMenuCart({ name, price, sugar: '50% sugar' });
+        });
+      });
+    }
+
+    function addToMenuCart(product) {
+      const sugar = product.sugar || '50% sugar';
+      const key = `${product.name}|${sugar}`;
+      const existing = menuCart.find(item => item.key === key);
+      if (existing) {
+        existing.quantity += 1;
+      } else {
+        menuCart.push({ ...product, sugar, key, quantity: 1 });
+      }
+      renderMenuCart();
+    }
+
+    function removeFromMenuCart(productKey) {
+      menuCart = menuCart.filter(item => item.key !== productKey);
+      renderMenuCart();
+    }
+
+    function updateMenuQuantity(productKey, qty) {
+      const item = menuCart.find(p => p.key === productKey);
+      if (item) {
+        item.quantity = Math.max(1, qty);
+        renderMenuCart();
+      }
+    }
+
+    function initProductDetailModal() {
+      const modal = document.getElementById('productDetailModal');
+      const closeBtn = document.getElementById('detailCloseBtn');
+      const detailAddBtn = document.getElementById('detailAddBtn');
+      const sugarSelect = document.getElementById('detailSugarSelect');
+
+      if (!modal || !closeBtn || !detailAddBtn || !sugarSelect) return;
+
+      closeBtn.addEventListener('click', closeProductDetail);
+      modal.addEventListener('click', event => {
+        if (event.target === modal) closeProductDetail();
+      });
+      detailAddBtn.addEventListener('click', () => {
+        const name = detailAddBtn.getAttribute('data-name');
+        const price = parseFloat(detailAddBtn.getAttribute('data-price'));
+        addToMenuCart({ name, price, sugar: sugarSelect.value });
+        closeProductDetail();
+      });
+      document.addEventListener('keydown', event => {
+        if (event.key === 'Escape') closeProductDetail();
+      });
+    }
+
+    function renderMenuCart() {
+      const cartContainer = document.getElementById('menuCartItems');
+      const totalSpan = document.getElementById('menuCartTotal');
+      const checkoutBtn = document.getElementById('checkoutBtn');
+
+      if (menuCart.length === 0) {
+        cartContainer.innerHTML = '<div class="empty-cart-msg">No items yet</div>';
+        totalSpan.innerText = '$0.00';
+        checkoutBtn.classList.add('hidden');
+        return;
+      }
+
+      const total = menuCart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+
+      cartContainer.innerHTML = menuCart.map(item => `
+        <div class="cart-item">
+          <div class="cart-item-info">
+            <div>
+              <div class="cart-item-name">${item.name}</div>
+              <div class="cart-item-sugar">${item.sugar}</div>
+            </div>
+            <div class="cart-item-price">$${item.price.toFixed(2)}</div>
+          </div>
+          <div class="cart-item-controls">
+            <button type="button" class="qty-btn qty-minus" data-key="${item.key}" title="Decrease">−</button>
+            <input type="number" class="qty-input" data-key="${item.key}" value="${item.quantity}" min="1">
+            <button type="button" class="qty-btn qty-plus" data-key="${item.key}" title="Increase">+</button>
+            <button type="button" class="btn-remove" data-key="${item.key}" title="Remove"><i class="fas fa-trash"></i></button>
+          </div>
+        </div>
+      `).join('');
+
+      totalSpan.innerText = `$${total.toFixed(2)}`;
+      checkoutBtn.classList.remove('hidden');
+
+      // Attach event listeners
+      document.querySelectorAll('.qty-minus').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const key = btn.getAttribute('data-key');
+          const item = menuCart.find(p => p.key === key);
+          if (item) updateMenuQuantity(key, item.quantity - 1);
+        });
+      });
+
+      document.querySelectorAll('.qty-plus').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const key = btn.getAttribute('data-key');
+          const item = menuCart.find(p => p.key === key);
+          if (item) updateMenuQuantity(key, item.quantity + 1);
+        });
+      });
+
+      document.querySelectorAll('.qty-input').forEach(input => {
+        input.addEventListener('change', () => {
+          const key = input.getAttribute('data-key');
+          const qty = parseInt(input.value) || 1;
+          updateMenuQuantity(key, qty);
+        });
+      });
+
+      document.querySelectorAll('.btn-remove').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const key = btn.getAttribute('data-key');
+          removeFromMenuCart(key);
+        });
+      });
+    }
+
+
+
+    function initMenuSearch() {
+      // Search is handled by the top header input.
+    }
+
+    function initMenuFilters() {
+      document.querySelectorAll('.cat-filter').forEach(btn => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('.cat-filter').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          menuCurrentCategory = btn.getAttribute('data-category');
+          menuSearchQuery = '';
+          document.getElementById('coffeeSearchInput').value = '';
+          renderMenuProducts();
+        });
+      });
+    }
+
+    function initMenuCheckout() {
+      const checkoutBtn = document.getElementById('checkoutBtn');
+      if (checkoutBtn) {
+        checkoutBtn.addEventListener('click', () => {
+          const orderSection = document.getElementById('order');
+          const nameInput = document.getElementById('customerName');
+
+          if (menuCart.length > 0) {
+            const firstItem = menuCart[0];
+            const coffeeSelect = document.getElementById('orderCoffee');
+            const quantityInput = document.getElementById('orderQuantity');
+            const notesInput = document.getElementById('orderNotes');
+            const totalQuantity = menuCart.reduce((sum, item) => sum + item.quantity, 0);
+
+            quantityInput.value = menuCart.length === 1 ? firstItem.quantity : totalQuantity;
+
+            if (menuCart.length === 1) {
+              coffeeSelect.dataset.name = firstItem.name;
+              coffeeSelect.dataset.price = firstItem.price;
+              coffeeSelect.value = formatOrderCoffeeName(firstItem.name, firstItem.price, firstItem.quantity);
+            } else {
+              const total = menuCart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+              coffeeSelect.dataset.name = 'Multiple coffees';
+              coffeeSelect.dataset.price = total / totalQuantity;
+              coffeeSelect.value = formatOrderCoffeeName('Multiple coffees', total / totalQuantity, totalQuantity);
+            }
+
+            notesInput.value = menuCart.map(item => `${item.quantity}x ${item.name} (${item.sugar}) - $${(item.price * item.quantity).toFixed(2)}`).join(', ');
+          }
+
+          if (orderSection) {
+            orderSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            window.location.hash = 'order';
+          }
+
+          if (nameInput) {
+            nameInput.focus({ preventScroll: true });
+          }
+        });
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      // Menu initialization
+      renderMenuProducts();
+      initMenuSearch();
+      initMenuFilters();
+      initMenuCheckout();
+      initProductDetailModal();
+
+      // Other sections
+      handleSearch();
+      initOrderForm();
+      initContactForm();
+      initNavScroll();
+      initStickyHeader();
+    });
+  </script>
+</body>
+</html>
